@@ -1,13 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import SidebarHoverContextProvider from "./components/Contexts/SidebarHoverContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import UserContextProvider from "./components/Contexts/UserContext";
+
+import GenerativeDataContextProvider from "./components/Contexts/GenerativeDataContext";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <UserContextProvider>
+      <GenerativeDataContextProvider>
+        <SidebarHoverContextProvider>
+          <App />
+        </SidebarHoverContextProvider>
+      </GenerativeDataContextProvider>
+    </UserContextProvider>
   </React.StrictMode>
 );
 
