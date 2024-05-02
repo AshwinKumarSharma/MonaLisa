@@ -36,14 +36,14 @@ const SignUp = () => {
       }
       setLoader(false);
       console.log("User registered Successfully");
-      toast.success("User Registered Successfully", {
-        position: "top-center",
-      });
+      // toast.success("User Registered Successfully", {
+      //   position: "top-center",
+      // });
     } catch (error) {
       console.log("error message", error.message);
-      toast.success(error.message, {
-        position: "top-right",
-      });
+      // toast.success(error.message, {
+      //   position: "top-right",
+      // });
     }
   };
   return (
